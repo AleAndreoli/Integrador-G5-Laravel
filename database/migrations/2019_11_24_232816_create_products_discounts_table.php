@@ -15,9 +15,11 @@ class CreateProductsDiscountsTable extends Migration
     {
         Schema::create('products_discounts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedbigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
+            $table->unsignedbigInteger('discount_id');
             $table->foreign('discount_id')->references('id')->on('discounts');
-            $table->timestamps('end_date');
+            $table->timestamp('end_date');
             $table->softDeletes();
             $table->timestamps();
         });

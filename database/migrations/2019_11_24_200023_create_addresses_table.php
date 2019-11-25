@@ -24,9 +24,9 @@ class CreateAddressesTable extends Migration
             $table->string('province');
             $table->string('city');
             $table->integer('zip_code');
-            $table->biginteger('user_id');
+            $table->unsignedbigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->nullable();
-            $table->biginteger('provider_id');
+            $table->unsignedbigInteger('provider_id');
             $table->foreign('provider_id')->references('id')->on('providers')->nullable();
             $table->timestamps();
             $table->softDeletes();

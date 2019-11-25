@@ -18,6 +18,7 @@ class CreateShoppingCartsTable extends Migration
             $table->timestamp('closed_at');
             $table->string('payment_mthod');
             $table->string('state');
+            $table->unsignedbigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
             $table->softDeletes();

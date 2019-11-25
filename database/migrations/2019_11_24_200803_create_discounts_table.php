@@ -17,7 +17,7 @@ class CreateDiscountsTable extends Migration
             $table->bigIncrements('id');
             $table->double('percentage', 4, 2);
             $table->double('amount', 10, 2);
-            $table->timestamps('end_date');
+            $table->timestamp('end_date');
             $table->softDeletes();
             $table->timestamps();
         });

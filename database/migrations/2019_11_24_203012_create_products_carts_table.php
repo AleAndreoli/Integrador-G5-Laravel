@@ -15,7 +15,9 @@ class CreateProductsCartsTable extends Migration
     {
         Schema::create('products_carts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedbigInteger('shopping_cart_id');
             $table->foreign('shopping_cart_id')->references('id')->on('shopping_carts');
+            $table->unsignedbigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
             $table->integer('amount');
             $table->double('price', 10, 2);
