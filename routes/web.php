@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/index', function () {
+    return view('index');
+});
+
+Route::get('/product/add', function () {
+    return view('product.add');
+});
+
+Route::get('/product/{id}', 'ProductController@show')->name('showProduct');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

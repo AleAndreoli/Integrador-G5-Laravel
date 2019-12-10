@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductsDiscountsTable extends Migration
+class CreateFavoritesUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateProductsDiscountsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products_discounts', function (Blueprint $table) {
+        Schema::create('favorites_users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
-            $table->unsignedBigInteger('discount_id');
-            $table->foreign('discount_id')->references('id')->on('discounts');
-            $table->timestamp('end_date');
+            $table->unsignedbigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -32,6 +31,6 @@ class CreateProductsDiscountsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products_discounts');
+        Schema::dropIfExists('favorites_users');
     }
 }
