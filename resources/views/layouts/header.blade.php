@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-light navbar-top py-0">
   <div class="container-fluid">
       <a class="navbar-brand" href="index.php">
-       <img src="img/logotipos/GreenValleyDer.png" alt="">
+       <img src="/img/logotipos/GreenValleyDer.png" alt="">
       </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -17,17 +17,24 @@
                 <a class="nav-link" href="user-account.php">Cuenta<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="?cerrarSesion">Cerrar Sesion</a>
+                <a class="nav-link" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                  Cerrar Sesion</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
               </li>
             @else
               <li class="nav-item">
-                <a class="nav-link" href="login.php">Iniciar Sesion</a>
+                <a class="nav-link" href="{{ route('login') }}">Iniciar Sesion</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="registro.php">Registrarse</a>
+                <a class="nav-link" href="/register">Registrarse</a>
               </li>
             @endif
-              <li class="nav-item">
+
+              <li class="nav-item"> {{-- Agregar ruta FAQ  --}}
                 <a class="nav-link" href="FAQ.php">Preguntas Frecuentes</a>
               </li>
           </ul>

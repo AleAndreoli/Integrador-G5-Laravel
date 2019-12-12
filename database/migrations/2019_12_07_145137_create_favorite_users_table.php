@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductsCartsTable extends Migration
+class CreateFavoriteUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,14 @@ class CreateProductsCartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products_carts', function (Blueprint $table) {
+        Schema::create('favorite_users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedbigInteger('shopping_cart_id');
-            $table->foreign('shopping_cart_id')->references('id')->on('shopping_carts');
-            $table->unsignedbigInteger('product_id');
+            $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
-            $table->integer('amount');
-            $table->double('price', 10, 2);
-            $table->timestamps();
+            $table->unsignedbigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 
@@ -33,6 +31,6 @@ class CreateProductsCartsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products_carts');
+        Schema::dropIfExists('favorites_users');
     }
 }

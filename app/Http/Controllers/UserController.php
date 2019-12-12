@@ -15,4 +15,13 @@ class User extends Controller
       return redirect('/index')
 
     }
+
+
+    public function logoutUser(){
+
+      Auth::logout();
+      return redirect('/')
+
+    }
+
 }

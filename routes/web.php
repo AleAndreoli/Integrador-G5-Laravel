@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/index', function () {
@@ -21,6 +21,12 @@ Route::get('/index', function () {
 
 Route::get('/product/add', function () {
     return view('product.add');
+});
+
+Route::post('/product/add', 'ProductController@addProduct');
+
+Route::get('/product', function () {
+    return view('product.producto');
 });
 
 Route::get('/product/{id}', 'ProductController@show')->name('showProduct');

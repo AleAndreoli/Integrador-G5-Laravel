@@ -15,16 +15,17 @@
     <div class="container m-auto">
     <div class="row justify-content-center">
 
-      <form class="form" method="post" enctype="multipart/form-data" id="registrationForm">
+      <form class="form" method="post" enctype="multipart/form-data" id="ABMProducto">
+        @csrf
           <div class="form-group">
 
               <div class="col-xs-6">
-                  <label for="producto">
+                  <label for="name">
                     <h4>
                       Nombre Producto <!--Requiere lógica de nombre para producto existente o preguntar nombre-->
                     </h4>
                   </label>
-                  <input type="text" class="form-control" name="nombre" id="nombre" value='' placeholder="Nombre/s"><!--En value se debe insertar el nombre si existiera-->
+                  <input type="text" class="form-control" name="name" id="name" value='' placeholder="Nombre/s"><!--En value se debe insertar el nombre si existiera-->
               </div>
 
           </div>
@@ -32,12 +33,12 @@
           <div class="form-group">
 
               <div class="col-xs-6">
-                  <label for="producto">
+                  <label for="price">
                     <h4>
                       Precio <!--Requiere lógica de precio para producto existente o preguntar nombre-->
                     </h4>
                   </label>
-                  <input type="text" class="form-control" name="nombre" id="nombre" value='' placeholder="precio"><!--En value se debe insertar el nombre si existiera-->
+                  <input type="text" class="form-control" name="price" id="price" value='' placeholder="precio"><!--En value se debe insertar el nombre si existiera-->
               </div>
 
           </div>
@@ -45,26 +46,43 @@
           <div class="form-group">
 
               <div class="col-xs-6">
-                  <label for="producto">
+                  <label for="description">
                     <h4>
-                      Descuento <!--Requiere lógica de Descuento para producto existente o preguntar precio-->
+                      Descripción
                     </h4>
                   </label>
-                  <input type="text" class="form-control" name="nombre" id="nombre" value='' placeholder="Descuento"><!--En value se debe insertar el nombre si existiera-->
+                  <textarea rows="8" cols="80" form="ABMProducto" class="form-control" name="description" id="description" value='' placeholder="Ingrese una descripción breve del producto">
+                  </textarea>
               </div>
 
-          </div>
+              <div class="form-group">
+
+                  <div class="col-xs-6">
+                      <label for="provider_id">
+                        <h4>
+                          Proveedor
+                        </h4>
+                      </label>
+                      <input type="text" class="form-control" name="provider_id" id="provider_id" value='' placeholder="Proveedor">
+                  </div>
+
+              </div>
+
+              <div class="form-group">
+
+                  <div class="col-xs-6">
+                      <label for="category_id">
+                        <h4>
+                          Categoria
+                        </h4>
+                      </label>
+                      <input type="text" class="form-control" name="category_id" id="category_id" value='' placeholder="Categoria">
+                  </div>
+
+              </div>
 
           <div class="form-group">
 
-              <div class="col-xs-6">
-                  <label for="producto">
-                    <h4>
-                      Proveedor <!--Requiere lógica de proveedor para producto existente o preguntar id_proveedor-->
-                    </h4>
-                  </label>
-                  <input type="text" class="form-control" name="nombre" id="nombre" value='' placeholder="id/proveedor"><!--En value se debe insertar el nombre si existiera-->
-              </div>
 
           </div>
 
