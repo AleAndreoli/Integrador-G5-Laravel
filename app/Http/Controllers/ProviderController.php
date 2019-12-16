@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Provider;
 
 class ProviderController extends Controller
 {
@@ -10,14 +11,28 @@ class ProviderController extends Controller
 
     public function show($id)
     {
-        $producto = Provider::find($id);
+        $proveedor = Provider::find($id);
         $vac = compact("proveedor");
-        return view('product.producto', $vac);
+        return view('providers.provider', $vac);
     }
 
-    public function addProduct(Request $req)
+    public function addProvider(Request $req)
     {
-        Product::create($req->all());
-        return redirect('/product/add');
+        Provider::create($req->all());
+        return view('providers.add');
+    }
+
+    public function directory()
+    {
+        $proveedores = Provider::all();
+        $vac = compact('proveedores');
+        return view('providers.providerlist', $vac);
+    }
+
+    public function update($id, Request $req)
+    {
+        $actor = Actor::find($id);
+        $actor->fill($request->all);
+        $actor->save();
     }
 }

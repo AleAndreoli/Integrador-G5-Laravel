@@ -19,17 +19,31 @@ Route::get('/index', function () {
     return view('index');
 });
 
-Route::get('/product/add', function () {
-    return view('product.add');
-});
+Route::get('/product/add', 'ProductController@addProduct');
 
-Route::post('/product/add', 'ProductController@addProduct');
+Route::post('/product/add', 'ProductController@storeProduct');
 
 Route::get('/product', function () {
     return view('product.producto');
 });
 
 Route::get('/product/{id}', 'ProductController@show')->name('showProduct');
+
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+Route::get('/provider/add', function () {
+    return view('providers.add');
+});
+
+Route::post('/provider/add', 'ProviderController@addProvider')->name('addProvider');
+
+Route::get('/providers/providerlist', 'ProviderController@directory')->name('listaProveedores');
+
+Route::get('provider/{id}', 'ProviderController@show')->name('verProveedor');
+
+Route::post('provider/{id}', 'ProviderController@update')->name('editarProveedor');
 
 Auth::routes();
 

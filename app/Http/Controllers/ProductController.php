@@ -4,15 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Provider;
 
 class ProductController extends Controller
 {
     // Controlador para el modelo de productos
-    /*
-        public function storeProduct(Request $req){
-
-          return view()
-        }*/
 
     public function show($id)
     {
@@ -21,7 +17,14 @@ class ProductController extends Controller
         return view('product.producto', $vac);
     }
 
-    public function addProduct(Request $req)
+    public function addProduct()
+    {
+        $proveedores = Provider::all();
+        $vac = compact('proveedores');
+        return view('/product.add', $vac);
+    }
+
+    public function storeProduct(Request $req)
     {
         Product::create($req->all());
         return redirect('/product/add');

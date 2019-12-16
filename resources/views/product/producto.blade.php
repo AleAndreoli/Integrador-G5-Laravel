@@ -69,8 +69,21 @@
     		</div> <!-- col.// -->
     	</div> <!-- row.// -->
     	<hr>
-    	<!-- <a href="#" class="btn  btn-primary"> Comprar ahora </a> -->
-    	<a href="#" class="btn  btn-outline-primary"> <i class="fas fa-shopping-cart"></i> Agregar al carrito </a>
+      @guest
+        <h5> Atención humano! </h6>
+        <br>
+        <p> Para adquirir nuestros productos es ABSOLUTAMENTE necesario que estés <a href="/register">registrado</a> y hayas <a href="/login">iniciado sesión</a>. <br>
+        Si eres un robot no deberías estar leyendo esto... Mucho menos intentando hacer compras! </p>
+      @endguest
+
+      @auth
+        @if (Auth::user()->esAdmin == 1)
+          	<a href="#" class="btn  btn-outline-primary"> <i class="fas fa-edit"></i> Editar Elemento! </a>
+        @else
+          <a href="#" class="btn  btn-outline-primary"> <i class="fas fa-shopping-cart"></i> Agregar al carrito </a>
+        @endif
+      @endauth
+
     </article> <!-- card-body.// -->
     		</aside> <!-- col.// -->
     	</div> <!-- row.// -->

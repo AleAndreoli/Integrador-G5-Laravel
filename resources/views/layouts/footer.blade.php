@@ -19,7 +19,7 @@
                   <textarea name="message" placeholder="Diganos lo que piensa..."></textarea>
                 </div>
                 <div class="col-12">
-                  <a href="#" class="button btn-success"><i class="fa"></i> Enviar Comentarios </a>
+                  <a href="#" class="button btn-success"><i class="fas fa-paper-plane"></i> Enviar Comentarios </a>
                 </div>
               </div>
             </form>
@@ -48,13 +48,13 @@
               <div class="col-md-6 col-sm-12">
                 <ul>
                   <li>
-                    <a class="fa fa-twitter" href="#"> @greenvalley</a>
+                    <a class="fab fa-twitter" href="#"> @greenvalley</a>
                   </li>
                   <li>
-                    <a class="fa fa-instagram" href="#"> instagram.com/greenvalley</a>
+                    <a class="fab fa-instagram" href="#"> instagram.com/greenvalley</a>
                   </li>
                   <li>
-                    <a class="fa fa-facebook" href="#"> facebook.com/greenvalley</a>
+                    <a class="fab fa-facebook-square" href="#"> facebook.com/greenvalley</a>
                   </li>
                 </ul>
               </div>

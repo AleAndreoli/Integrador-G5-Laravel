@@ -1,4 +1,5 @@
-body, footer, form, input, textarea, select {
+
+#footer {
 		font-family: 'Source Sans Pro';
 		font-weight: 300;
 		color: #777;
@@ -21,7 +22,7 @@ a.nav-link:hover{
 	height: auto;
 }
 
-form label {
+#footer label {
   font-weight: 600;
   text-transform: uppercase;
   color: #888;
@@ -29,8 +30,8 @@ form label {
   margin: 0 0 1em 0;
 }
 
-form input,
-form textarea {
+#footer input,
+#footer textarea {
   display: block;
   border: 0;
   margin-bottom:3%;
@@ -42,7 +43,6 @@ form textarea {
   padding: 0.75em 1em 0.75em 1em;
 }
 
- button,
  .button {
 		position: relative;
 		display: inline-block;
@@ -60,19 +60,6 @@ form textarea {
 		letter-spacing: 2px;
 		padding: 0.85em 2.75em 0.85em 2.75em;
 	}
-
-  form input[type="text"]:focus,
-  form input[type="email"]:focus,
-  form input[type="password"]:focus,
-  form select:focus,
-  form textarea:focus {
-    background: rgb(240, 240, 240);
-    font-family: 'Source Code Pro', monospace;
-  }
-
-form textarea {
-  min-height: 11em;
-}
 
 
 #carousel .carousel-item{
@@ -134,3 +121,7 @@ form textarea {
     text-decoration: none;
     color: #777;
   }
+
+	#footer textarea {
+	  min-height: 11em;
+	}
