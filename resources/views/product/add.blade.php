@@ -56,7 +56,7 @@
                     Proveedor
                   </h4>
                 </label>
-                <select class="" name="provider_id">
+                <select class="form-control" name="provider_id">
                   @foreach ($proveedores as $proveedor)
                     <option value="{{$proveedor->id}}">{{$proveedor->name}}</option>
                   @endforeach

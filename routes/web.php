@@ -39,7 +39,7 @@ Route::get('/provider/add', function () {
 
 Route::post('/provider/add', 'ProviderController@addProvider')->name('addProvider');
 
-Route::get('/providers/providerlist', 'ProviderController@directory')->name('listaProveedores');
+Route::get('/providers/list', 'ProviderController@directory')->name('listaProveedores');
 
 Route::get('provider/{id}', 'ProviderController@show')->name('verProveedor');
 
