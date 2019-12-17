@@ -19,8 +19,7 @@
                   <h1 class="display-4">{{$proveedor->name}}</h1>
                   <p class="text-muted mb-4">Es posible editar los datos del proveedor. No olvides guardar los cambios al finalizar.</p>
                   <form class="form" action="{{route('editarProveedor', ['id' => $proveedor->id])}}" method="post">
-                    <input type="hidden" name="_method" value="PUT">
-                    {{csrf_field()}}
+                    @csrf
                       <div class="form-group mb-3">
                         <label for="name">Nombre: </label>
                         <input type="text"  class="form-control" name="name" value="{{$proveedor->name}}">

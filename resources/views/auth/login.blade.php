@@ -6,7 +6,7 @@
   <div class="container mb-5">
       <div class="row no-gutter"> <!-- Fila sin separacion entre divs -->
 
-        <div class="col-md-6 d-none d-md-flex bg-image"> <!-- Div mitad para la imagen -->
+        <div class="col-md-6 d-none d-md-flex bg-image p-0"> <!-- Div mitad para la imagen -->
           <img src="/img/carretilla.jpg" alt="Carretilla">
         </div>
 

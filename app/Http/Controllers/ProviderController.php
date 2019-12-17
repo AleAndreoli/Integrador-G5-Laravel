@@ -31,8 +31,9 @@ class ProviderController extends Controller
 
     public function update($id, Request $req)
     {
-        $actor = Actor::find($id);
-        $actor->fill($request->all);
-        $actor->save();
+        $proveedor = Provider::find($id);
+        $proveedor->fill($req->all());
+        $proveedor->save();
+        return $this->directory();
     }
 }

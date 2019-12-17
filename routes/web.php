@@ -45,6 +45,10 @@ Route::get('provider/{id}', 'ProviderController@show')->name('verProveedor');
 
 Route::post('provider/{id}', 'ProviderController@update')->name('editarProveedor');
 
+Route::get('/user/{id}', 'UserController@show')->name('pantallaCuenta');
+
+Route::post('/user/{id}', 'UserController@update')->name('actualizarUsuario');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

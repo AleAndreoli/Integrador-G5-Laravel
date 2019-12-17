@@ -15,7 +15,7 @@
             </li>
             @if(Auth::id())
               <li class="nav-item">
-                <a class="nav-link" href="user-account.php">Cuenta<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/user/{{Auth::id()}}">Cuenta<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('logout') }}"
@@ -36,7 +36,7 @@
             @endif
 
               <li class="nav-item">
-                <a class="nav-link" href="/faq  ">Preguntas Frecuentes</a>
+                <a class="nav-link" href="/faq">Preguntas Frecuentes</a>
               </li>
             {{-- @if (ShoppingCart::id())
               <div class="widget-header">

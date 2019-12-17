@@ -18,7 +18,7 @@
   <div class="container mb-5">
       <div class="row no-gutter"> <!-- Fila sin separacion entre divs -->
 
-        <div class="col-md-6 d-none d-md-flex bg-image"> <!-- Div mitad para la imagen -->
+        <div class="col-md-6 d-none d-md-flex bg-image p-0"> <!-- Div mitad para la imagen -->
           <img src="/img/ivy.jpg" alt="Carretilla">
         </div>
 
@@ -28,7 +28,7 @@
             <div class="px-4 py-3 text-uppercase text-center"><h3 class="font-weight-bold">¡Registrate para comprar tus productos!</h3></div>
             <p class="my-3 px-4">
               En solo 7 pasos estarás adentro de tu cuenta y explorando nuestras maravillosas ofertas... <br>
-              Si ya tenés una cuenta 
+              Si ya tenés una cuenta
               <a type="" href="{{ route('login') }}" name="button">seguí por acá</a>
             </p>
 
