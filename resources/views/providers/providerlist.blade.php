@@ -15,7 +15,7 @@
             <div class="d-flex align-items-center py-5">
               <ul class="list-group">
                 @forelse ($proveedores as $proveedor)
-                  <li class="list-group-item list-group-item-action"><a href="/provider/{{$proveedor->id}}">{{$proveedor->name}} {{$proveedor->id}}</a></li>
+                  <li class="list-group-item list-group-item-action"><a href="/provider/{{$proveedor->id}}">{{$proveedor->name}}</a></li>
                 @empty
                   <div class="col-md-12 col-xl-10 mx-auto">
                       <h3 class="display-4">No hay proveedores que mostrar!</h3>

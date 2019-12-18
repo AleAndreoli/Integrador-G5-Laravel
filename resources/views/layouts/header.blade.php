@@ -10,6 +10,9 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
+            @if (Auth::user()->esAdmin == 1)
+              @include('layouts.adminoptions')
+            @endif
             <li class="nav-item">
               <a class="nav-link" href="/index">Home</a>
             </li>

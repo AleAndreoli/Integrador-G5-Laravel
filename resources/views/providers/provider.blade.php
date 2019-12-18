@@ -26,7 +26,11 @@
                       </div>
                       <div class="form-group mb-3">
                         <label for="billing_method">Método de facturación: </label>
-                        <input type="text"  class="form-control" name="billing_method" value="{{$proveedor->billing_method}}">
+                        <select class="form-control" name="billing_method" id="billing_method">
+                          <option value="{{$proveedor->billing_method}}" selected disabled> {{$proveedor->billing_method}} </option>
+                          <option value="Contado"> Contado </option>
+                          <option value="Cuenta Corriente"> Cuenta Corriente </option>
+                        </select>
                       </div>
 
                       <div class="form-group">

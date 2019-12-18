@@ -19,6 +19,12 @@ Route::get('/index', function () {
     return view('index');
 });
 
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+// Rotas de Producto
+
 Route::get('/product/add', 'ProductController@addProduct');
 
 Route::post('/product/add', 'ProductController@storeProduct');
@@ -29,9 +35,7 @@ Route::get('/product', function () {
 
 Route::get('/product/{id}', 'ProductController@show')->name('showProduct');
 
-Route::get('/faq', function () {
-    return view('faq');
-});
+// Rutas de Proveedor
 
 Route::get('/provider/add', function () {
     return view('providers.add');
@@ -45,9 +49,19 @@ Route::get('provider/{id}', 'ProviderController@show')->name('verProveedor');
 
 Route::post('provider/{id}', 'ProviderController@update')->name('editarProveedor');
 
+// Rutas de Usuario
+
 Route::get('/user/{id}', 'UserController@show')->name('pantallaCuenta');
 
 Route::post('/user/{id}', 'UserController@update')->name('actualizarUsuario');
+
+// Rutas de Categoría
+
+Route::get('/category/add', 'CategoryController@addCategory');
+
+Route::post('/category/add', 'categoryController@storeCategory');
+
+Route::get('categories/list', 'CategoryController@directory');
 
 Auth::routes();
 
