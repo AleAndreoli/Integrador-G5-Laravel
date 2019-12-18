@@ -80,7 +80,7 @@
         @if (Auth::user()->esAdmin == 1)
           	<a href="#" class="btn  btn-outline-primary"> <i class="fas fa-edit"></i> Editar Elemento! </a>
         @else
-          <a href="#" class="btn  btn-outline-primary"> <i class="fas fa-shopping-cart"></i> Agregar al carrito </a>
+          <a href="#" class="btn  btn-outline-primary" id="botonCompra"> <i class="fas fa-shopping-cart"></i> Agregar al carrito </a>
         @endif
       @endauth
 
@@ -89,4 +89,19 @@
     	</div> <!-- row.// -->
     </div> <!-- card.// -->
 
+  @endsection
+
+  @section('script-adicional')
+  <script type="text/javascript">
+    var carrito = document.getElementById('botonCompra');
+    carrito.onclick = showAlert;
+
+    function showAlert(event) {
+        //revisar si hay un carrito en session
+        // llamar al controlador para crear carrito si es necesario
+        // agregar el producto al carrito
+        swal("Click en el carrito");
+      }
+
+  </script>
   @endsection

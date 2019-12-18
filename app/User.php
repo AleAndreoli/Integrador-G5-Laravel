@@ -47,8 +47,18 @@ class User extends Authenticatable
         return $this->hasMany('App\Address', 'user_id');
     }
 
+    public function telephones()
+    {
+        return $this->hasMany('App\Telephone', 'user_id');
+    }
+
     public function shopingCarts()
     {
-        return $this->hasMany('App\Shoping_Cart', 'user_id');
+        return $this->hasMany('App\ShoppingCart', 'user_id');
+    }
+
+    public function favorites()
+    {
+        return $this->belongsToMany('App\Product', 'favorite_users', 'user_id', 'product_id');
     }
 }
