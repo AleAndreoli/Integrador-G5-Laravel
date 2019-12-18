@@ -66,3 +66,9 @@ Route::get('categories/list', 'CategoryController@directory');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+Route::post('/address/add', 'AddressController@addAddress')->name('addAddress');
+
+Route::post('/address/{userId}', 'AddressController@show')->name('showAddress');
