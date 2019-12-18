@@ -63,6 +63,12 @@ Route::post('/category/add', 'categoryController@storeCategory');
 
 Route::get('categories/list', 'CategoryController@directory');
 
+// Rutas del Carrito
+
+Route::get('/checkout', function () {
+    return view('carts.checkout');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

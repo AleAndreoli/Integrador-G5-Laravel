@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product_Discount extends Model
+class ProductDiscount extends Model
 {
     //
 }

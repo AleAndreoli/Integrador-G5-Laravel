@@ -27,8 +27,8 @@
           <ul class="list-group">
             <li class="list-group-item text-muted">Resumen Actividades</li>
             <!--la idea es contar PHP pedidos del usuario, productos faveados y comentarios-->
-            <li class="list-group-item text-right"><span class="float-left"><strong>Compras</strong></span>125</li>
-            <li class="list-group-item text-right"><span class="float-left"><strong>Favoritos</strong></span> 13</li>
+            <li class="list-group-item text-right"><span class="float-left"><strong>Compras</strong></span>{{$usuario->shopingCarts->where('closed_at','!=', null)->count()}}</li>
+            <li class="list-group-item text-right"><span class="float-left"><strong>Favoritos</strong></span>{{$usuario->favorites->unique()->count()}}</li>
             <li class="list-group-item text-right"><span class="float-left"><strong>Comentarios</strong></span> 37</li>
           </ul>
 
