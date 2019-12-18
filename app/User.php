@@ -36,4 +36,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getAddresses()
+    {
+        return Adress::where('user_id', $this->id)->get();
+    }
+
+    public function addresses()
+    {
+        return $this->hasMany('App\Address', 'user_id');
+    }
+
+    public function shopingCarts()
+    {
+        return $this->hasMany('App\Shoping_Cart', 'user_id');
+    }
 }

@@ -18,7 +18,7 @@
   		<div class="col-sm-3"><!--Barra lateral-->
 
 
-        <div class="text-center mt-2">
+      <div class="text-center mt-2">
           <img src="{{$usuario->avatar}}" class="img-circle img-thumbnail" alt="avatar">
         </div>
 

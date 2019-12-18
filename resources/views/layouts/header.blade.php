@@ -10,13 +10,15 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
-            @if (Auth::user()->esAdmin == 1)
-              @include('layouts.adminoptions')
-            @endif
+            @auth
+              @if (Auth::user()->esAdmin == 1)
+                @include('layouts.adminoptions')
+              @endif
+            @endauth
             <li class="nav-item">
               <a class="nav-link" href="/index">Home</a>
             </li>
-            @if(Auth::id())
+            @auth
               <li class="nav-item">
                 <a class="nav-link" href="/user/{{Auth::id()}}">Cuenta<span class="sr-only">(current)</span></a>
               </li>
@@ -29,14 +31,16 @@
                         @csrf
                     </form>
               </li>
-            @else
+            @endauth
+            
+            @guest
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('login') }}">Iniciar Sesion</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('register') }}">Registrarse</a>
               </li>
-            @endif
+            @endguest
 
               <li class="nav-item">
                 <a class="nav-link" href="/faq">Preguntas Frecuentes</a>

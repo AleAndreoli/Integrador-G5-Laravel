@@ -13,7 +13,7 @@ class UserController extends Controller
     public function show($id)
     {
         $usuario = User::find($id);
-        $vac = compact('usuario');
+        $vac = compact('usuario', 'direcciones');
         return view('user.user', $vac);
     }
 
