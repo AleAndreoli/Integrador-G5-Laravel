@@ -19,6 +19,7 @@ class AddressController extends Controller
 
     public function addAddress(Request $req)
     {
+        //dd($req);
         Address::create($req->all());
         return view('addresses.add');
     }

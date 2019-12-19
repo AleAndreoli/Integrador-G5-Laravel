@@ -15,9 +15,9 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('product_id')->nullable();
             $table->foreign('product_id')->references('id')->on('products')->nullable();
-            $table->unsignedbigInteger('user_id');
+            $table->unsignedbigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->nullable();
             $table->string('name');
             $table->string('route');
