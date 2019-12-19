@@ -75,7 +75,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Rutas de Direcciones
 
-Route::get('/address/add', 'AddressController@addAddress')->name('addAddress');
 
 Route::post('/address/add', 'AddressController@addAddress');
 

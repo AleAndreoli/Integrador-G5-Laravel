@@ -4,22 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Address;
+use App\User;
 
 class AddressController extends Controller
 {
     //Controlador del modelo de direcciones
 
-    public function show($id=null)
+    public function show($id)
     {
-        $direccion = Address::find($id);
-        $vac = compact("direccion");
+        $usuario = User::find($id);
+        $vac = compact("usuario");
         return view('addresses.add', $vac);
     }
 
     public function addAddress(Request $req)
     {
         Address::create($req->all());
-        return view('address.add');
+        return view('addresses.add');
     }
 
     public function directory()

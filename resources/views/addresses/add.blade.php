@@ -14,7 +14,7 @@
             <div class="d-flex align-items-center py-5">
               <div class="col-md-12 col-xl-10 mx-auto">
                   <h3 class="display-4">Agregar una nueva dirección</h3>
-                  <form class="form" method="post" id="ABMDireccion">
+                  <form class="form" method="post" id="ABMDireccion" action="/address/add">
                     @csrf
                     <div class="form-group">
 
@@ -27,6 +27,7 @@
                                       <div class="row">
 
                                         <!-- Calle -->
+                                            <input type="number" name="user_id" value="{{$usuario->id}}" id='user_id' hidden>
                                         <div class="input-group col-lg-12 mb-4">
                                             <input id="street" type="text" name="street" placeholder="Calle" class="form-control bg-white border-md" required>
                                         </div>
