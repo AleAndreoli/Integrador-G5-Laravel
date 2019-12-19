@@ -73,8 +73,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Rutas de Direcciones
 
+Route::get('/address/add', 'AddressController@addAddress')->name('addAddress');
 
-Route::post('/address/add', 'AddressController@addAddress')->name('addAddress');
+Route::post('/address/add', 'AddressController@addAddress');
 
-Route::post('/address/{userId}', 'AddressController@show')->name('showAddress');
+Route::get('/address/{userId}', 'AddressController@show')->name('showAddress');

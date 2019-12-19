@@ -9,11 +9,11 @@ class AddressController extends Controller
 {
     //Controlador del modelo de direcciones
 
-    public function show($id)
+    public function show($id=null)
     {
         $direccion = Address::find($id);
         $vac = compact("direccion");
-        return view('addresses.address', $vac);
+        return view('addresses.add', $vac);
     }
 
     public function addAddress(Request $req)
