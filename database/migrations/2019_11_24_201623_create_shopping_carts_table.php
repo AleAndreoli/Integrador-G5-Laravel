@@ -15,8 +15,8 @@ class CreateShoppingCartsTable extends Migration
     {
         Schema::create('shopping_carts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamp('closed_at');
-            $table->string('payment_mthod');
+            $table->timestamp('closed_at')->nullable();
+            $table->string('payment_method');
             $table->string('state');
             $table->unsignedbigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
