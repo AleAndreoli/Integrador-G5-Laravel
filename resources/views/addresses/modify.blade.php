@@ -13,67 +13,67 @@
         <div class="col-md-8 bg-light"> <!-- Div Mitad para el formulario -->
             <div class="d-flex align-items-center py-5">
               <div class="col-md-12 col-xl-10 mx-auto">
-                  <h3 class="display-4">Agregar una nueva dirección</h3>
-                  <form class="form" method="post" id="ABMDireccion" action="/address/add">
+                  <h3 class="display-4">Modificar el domicilio</h3>
+                  <form class="form" method="post" id="ABMDireccion" action="/address/modify">
                     @csrf
                       <div class="container">
                           <div class="row py-5 mt-4 align-items-center">
-
+                              
                               <!-- Carga de Direcciones -->
                               <div class="col-md-7 col-lg-12 ml-auto">
                                   <div class="row">
-
+                                        @foreach ($usuario->addresses as $address)
                                         <!-- Calle -->
                                         <input type="number" name="user_id" value="{{$usuario->id}}" id='user_id' hidden>
                                         <input type="number" name="provider_id" value="" id='provider_id' hidden>
                                         <div class="input-group col-lg-12 mb-4">
-                                            <input id="street" type="text" name="street" placeholder="Calle" class="form-control bg-white border-md" required>
+                                            <input id="street" type="text" name="street" value="{{$address->street}}" placeholder="Calle" class="form-control bg-white border-md" required>
                                         </div>
 
                                           <!-- Numero -->
                                           <div class="input-group col-lg-3 mb-4">
-                                              <input id="number" type="integer" name="number" placeholder="Número" class="form-control bg-white border-md" required>
+                                              <input id="number" type="integer" name="number" placeholder="Número" value="{{$address->number}}" class="form-control bg-white border-md" required>
                                           </div>
 
                                           <!-- Piso -->
                                           <div class="input-group col-lg-3 mb-4">
-                                              <input id="floor" type="integer" name="floor" placeholder="Piso" class="form-control bg-white border-md">
+                                              <input id="floor" type="integer" name="floor" placeholder="Piso" value="{{$address->floor}}" class="form-control bg-white border-md">
                                           </div>
 
                                           <!-- Departamento -->
                                           <div class="input-group col-lg-3 mb-4">
-                                              <input id="apartment" type="text" name="apartment" placeholder="Dpto" class="form-control bg-white border-md">
+                                              <input id="apartment" type="text" name="apartment" placeholder="Dpto" value="{{$address->apartment}}" class="form-control bg-white border-md">
                                           </div>
 
                                           <!-- Torre -->
                                           <div class="input-group col-lg-3 mb-4">
-                                              <input id="unit_tower" type="text" name="unit_tower" placeholder="Torre" class="form-control bg-white border-md">
+                                              <input id="unit_tower" type="text" name="unit_tower" placeholder="Torre" value="{{$address->unit_tower}}" class="form-control bg-white border-md">
                                           </div>
 
                                           <!-- Barrio -->
                                           <div class="input-group col-lg-4 mb-4">
-                                              <input id="neighborhood" type="text" name="neighborhood" placeholder="Barrio" class="form-control bg-white border-md">
+                                              <input id="neighborhood" type="text" name="neighborhood" placeholder="Barrio" value="{{$address->neighborhood}}" class="form-control bg-white border-md">
                                           </div>
 
                                           <!-- Ciudad -->
                                           <div class="input-group col-lg-5 mb-4">
-                                              <input id="city" type="text" name="city" placeholder="Ciudad" class="form-control bg-white border-md" required>
+                                              <input id="city" type="text" name="city" placeholder="Ciudad" value="{{$address->city}}" class="form-control bg-white border-md" required>
                                           </div>
 
                                           <!-- Código postal -->
                                           <div class="input-group col-lg-3 mb-4">
-                                              <input id="zip_code" type="text" name="zip_code" placeholder="Código Postal" class="form-control bg-white border-md" required>
+                                              <input id="zip_code" type="text" name="zip_code" placeholder="Código Postal" value="{{$address->zip_code}}" class="form-control bg-white border-md" required>
                                           </div>
 
                                           <!-- Provincia -->
                                           <div class="input-group col-lg-12 mb-4">
-                                              <select id="province" name="province" class="form-control custom-select bg-white border-md" placeholder="Código Postal" required>
+                                              <select id="province" name="province" class="form-control custom-select bg-white border-md" placeholder="Código Postal" selected="{{$address->province}}" required>
 
                                               </select>
                                           </div> <!-- Alias -->
                                           <div class="input.group col-md-12 mb4">
-                                            <select name="alias">
-                                              <option value="Casa" selected>Casa</option> 
+                                            <select id="alias" placeholder="Alias" name="alias" selected="{{$address->alias}}">
+                                              <option value="Casa">Casa</option> 
                                               <option value="Trabajo">Trabajo</option>
                                               <option value="Otro">Otro</option>
                                             </select>
@@ -83,12 +83,13 @@
                                           <div class="form-group">
                                             <div class="col-lg-12">
                                               <br>
-                                                <button class="btn btn-lg btn-success" type="submit"><ion-icon name="checkmark-circle-outline" href="/user/{{Auth::id()}}"></ion-icon> Guardar Direccion</button>
+                                                <button class="btn btn-lg btn-success" type="submit"><ion-icon name="{{Auth::id()}}" href="/user/{{Auth::id()}}"></ion-icon> Guardar direccion y volver a cuenta.</button>
                                                 <button class="btn btn-lg btn-light" type="reset"><ion-icon name="refresh"></ion-icon> Reiniciar</button>
                                             </div>
                                           </div>
                                       </div>
                                   </div>
+                                  @endforeach
                           </div>
                       </div>
 

@@ -212,7 +212,7 @@
                           Opciones
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                           <a class="dropdown-item" href="#">Elegir como predeterminada</a> <a class="dropdown-item" href="/address/{{Auth::id()}}">Modificar</a> <a class="dropdown-item" href="#">Eliminar</a>
+                           <a class="dropdown-item" href="#">Elegir como predeterminada</a> <a class="dropdown-item" href="/address/modify/{{Auth::id()}}" name="$address->id">Modificar</a> <a class="dropdown-item" href="#">Eliminar</a>
                         </div>
 
     								</div>
@@ -224,30 +224,7 @@
                       <p>No tenés domicilios cargados hasta el momento.</p>
                       </div>
                     @endforelse
-    						<div class="col-md-6">
-    							<div class="card">
-    								<h5 class="card-header">
-    									Trabajo
-    								</h5>
-    								<div class="card-footer">
-                      Ituzaingó 883 2º B <br>
-                      Bº Nueva Córdoba <br>
-                      Cel: (0351) 151234567 <br>
-                      CP X5008QWE <br>
-                      Córdoba, Argentina <br>
-                      <br>
-                      <div class="dropdown">
-
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                          Opciones
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                           <a class="dropdown-item" href="#">Elegir como predeterminada</a> <a class="dropdown-item" href="#">Modificar</a> <a class="dropdown-item" href="#">Eliminar</a>
-                        </div>
-
-    								</div>
-    							</div>
-    							</div>
+    						
     						</div>
     					</div>
     				</div>

@@ -84,6 +84,10 @@ Route::post('/address/add', 'AddressController@addAddress');
 
 Route::get('/address/{userId}', 'AddressController@show')->name('showAddress');
 
+Route::get('/address/modify/{userid}', 'AddressController@showModify')->name('showAddres');
+
+Route::post('/address/modify', 'AddressController@update')->name('modifyAddress');
+
 Route::get('/telephones/add', 'TelephoneController@show')->name('showTelephone');
 
 Route::post('/telephone/add', 'TelephoneController@addTelephone');

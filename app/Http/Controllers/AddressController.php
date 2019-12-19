@@ -39,9 +39,13 @@ class AddressController extends Controller
         return $this->directory();
     }
 
-    public function deleteAddress(Request $req)
+    public function showModify($id)
     {
-        
+        $usuario = User::find($id);
+        $vac = compact("usuario");
+        return view('addresses.modify', $vac);
     }
+
+    
 
 }
