@@ -215,7 +215,7 @@
                           Opciones
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                           <a class="dropdown-item" href="#">Elegir como predeterminada</a> <a class="dropdown-item" href="/address/modify/{{Auth::id()}}" name="$address->id">Modificar</a> <a class="dropdown-item" href="#">Eliminar</a>
+                           <a class="dropdown-item" href="#">Elegir como predeterminada</a> <a class="dropdown-item" href="/address/modify/{{Auth::id()}}" name="$address->id">Modificar</a> <a class="dropdown-item" href="/removeAddress/{userId}">Eliminar</a>
                         </div>
 
     								</div>

@@ -93,3 +93,5 @@ Route::get('/telephones/add', 'TelephoneController@show')->name('showTelephone')
 Route::post('/telephone/add', 'TelephoneController@addTelephone');
 //
 Route::get('/telephone/{userId}', 'TelephoneController@show')->name('showTelephone');
+
+Route::get('/removeAddress/{userId}', 'AddressController@addressDelete')->name('removeAddress');

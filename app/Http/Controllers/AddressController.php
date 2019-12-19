@@ -51,6 +51,6 @@ class AddressController extends Controller
         $id = $req['id'];
         $direccion = Address::find($id);
         $direccion->delete();
-        return redirect('user.user');
+        return redirect('addresses.remove');
     }
 }
