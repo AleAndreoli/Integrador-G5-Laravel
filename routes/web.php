@@ -35,6 +35,8 @@ Route::get('/product', function () {
 
 Route::get('/product/{id}', 'ProductController@show')->name('showProduct');
 
+Route::post('/product/{id}', 'ShoppingCartController@addProduct')->name('showProduct');
+
 // Rutas de Proveedor
 
 Route::get('/provider/add', function () {
@@ -69,13 +71,14 @@ Route::get('/checkout', function () {
     return view('carts.checkout');
 });
 
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Rutas de Direcciones
 
-Route::get('/address/add', 'AddressController@addAddress')->name('addAddress');
 
 Route::post('/address/add', 'AddressController@addAddress');
 

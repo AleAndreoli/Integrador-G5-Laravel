@@ -97,10 +97,12 @@
     carrito.onclick = showAlert;
 
     function showAlert(event) {
-        //revisar si hay un carrito en session
-        // llamar al controlador para crear carrito si es necesario
-        // agregar el producto al carrito
-        swal("Click en el carrito");
+      swal({
+        title: "Producto Añadido!",
+        text: "Nuestros manos expertas ya preparan su órden",
+        icon: "success",
+        button: "Seguir Comprando!",
+      });
       }
 
   </script>
