@@ -14,7 +14,7 @@ class AddressController extends Controller
     {
         $usuario = User::find($id);
         $vac = compact("usuario");
-        return view('addresses.add', $vac);
+        return view('user.user', $vac);
     }
 
     public function addAddress(Request $req)
@@ -42,10 +42,15 @@ class AddressController extends Controller
     public function showModify($id)
     {
         $usuario = User::find($id);
-        $vac = compact("usuario");
+        $vac = compact('usuario');
         return view('addresses.modify', $vac);
     }
 
-    
-
+    public function addressDelete(Request $req)
+    {
+        $id = $req['id'];
+        $direccion = Address::find($id);
+        $direccion->delete();
+        return redirect('user.user');
+    }
 }

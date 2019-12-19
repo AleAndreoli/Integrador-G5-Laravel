@@ -186,6 +186,7 @@
 
              <div class="tab-pane" id="direcciones">
              @forelse ($usuario->addresses as $address)
+             
                <h2></h2>                
                
                <div class="row">
@@ -195,16 +196,18 @@
     									{{$address->alias}}
     								</h5>
     								<div class="card-footer">
-    									{{$address->street}} {{$address->number}} {{$address->floor}} {{$address->apartment}} <br>
-                      {{$address->neighborhood}} <br>
-                      @forelse ($usuario->telephones as $tele)
-                      {{$tele->areaCode}} {{$tele->number}}
-                      @empty
-                      <p>No cargaste tu número</p>
-                      @endforelse
-                      <br>
-                      {{$address->zip_code}} <br>
-                      {{$address->city}}, {{$address->province}} <br>
+    									<td>
+                        {{$address->street}} {{$address->number}} {{$address->floor}} {{$address->apartment}}
+                      </td> <br>
+                      <td>
+                        {{$address->neighborhood}} 
+                      </td> <br>
+                      <td>
+                        {{$address->zip_code}}
+                      </td> <br>
+                      <td>
+                        {{$address->city}}, {{$address->province}}
+                      </td> <br>
                       <br>
                       <div class="dropdown">
 
@@ -223,6 +226,8 @@
                 <div class="col-md-6">
                       <p>No tenés domicilios cargados hasta el momento.</p>
                       </div>
+                      <a type="submit" class="btn btn-lg btn-success" href="/address/{{Auth::id()}}">Agrega tu primera dirección.</a>
+                      
                     @endforelse
     						
     						</div>

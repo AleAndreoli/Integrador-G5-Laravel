@@ -83,7 +83,7 @@
                                           <div class="form-group">
                                             <div class="col-lg-12">
                                               <br>
-                                                <button class="btn btn-lg btn-success" type="submit"><ion-icon name="{{Auth::id()}}" href="/user/{{Auth::id()}}"></ion-icon> Guardar direccion y volver a cuenta.</button>
+                                                <button class="btn btn-lg btn-success" type="submit"><ion-icon name="id" href="/user/{{Auth::id()}}"></ion-icon> Guardar direccion y volver a cuenta.</button>
                                                 <button class="btn btn-lg btn-light" type="reset"><ion-icon name="refresh"></ion-icon> Reiniciar</button>
                                             </div>
                                           </div>
