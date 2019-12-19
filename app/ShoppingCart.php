@@ -10,6 +10,10 @@ class ShoppingCart extends Model
 
     //protected $table = 'shopping_carts';
 
+    protected $fillable = [
+        'name', 'billing_method'
+    ];
+
     public function usuario()
     {
         return $this->belongsTo('App\User', 'user_id');

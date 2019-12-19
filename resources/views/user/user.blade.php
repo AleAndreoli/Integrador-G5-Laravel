@@ -27,7 +27,14 @@
           <ul class="list-group">
             <li class="list-group-item text-muted">Resumen Actividades</li>
             <!--la idea es contar PHP pedidos del usuario, productos faveados y comentarios-->
-            <li class="list-group-item text-right"><span class="float-left"><strong>Compras</strong></span>{{$usuario->shopingCarts->where('closed_at','!=', null)->count()}}</li>
+            <li class="list-group-item text-right"><span class="float-left"><strong>Compras</strong></span>
+              @if ($usuario->shoppingCarts != null)
+                {{$usuario->shoppingCarts->where('closed_at','!=', null)->count()}}
+              @else
+                0
+              @endif
+
+            </li>
             <li class="list-group-item text-right"><span class="float-left"><strong>Favoritos</strong></span>{{$usuario->favorites->unique()->count()}}</li>
             <li class="list-group-item text-right"><span class="float-left"><strong>Comentarios</strong></span> 37</li>
           </ul>
@@ -149,76 +156,29 @@
     							</tr>
     						</thead>
     						<tbody>
-    							<tr>
-    								<td>
-    									5
-    								</td>
-    								<td>
-    									1428696
-    								</td>
-    								<td>
-    									01/04/2014
-    								</td>
-    								<td>
-    									Pendiente de confirmación
-    								</td>
-    							</tr>
     							<tr class="table-active">
-    								<td>
-    									4
-    								</td>
-    								<td>
-    									1428654
-    								</td>
-    								<td>
-    									12/06/2013
-    								</td>
-    								<td>
-    									En delivery
-    								</td>
+                    @if ($usuario->shoppingCarts!=null)
+                      @foreach ($usuario->shoppingCarts as $cart)
+                        <td>
+        									{{$loop->index()}}
+        								</td>
+        								<td>
+        									{{$cart->id}}
+        								</td>
+        								<td>
+        									{{$cart->created_at}}
+        								</td>
+        								<td>
+        									{{$cart->state}}
+        								</td>
+                      @endforeach
+                    @else
+                      <p>No hay compras hechas hasta el momento</p>
+                    @endif
+
+
     							</tr>
-    							<tr class="table-success">
-    								<td>
-    									3
-    								</td>
-    								<td>
-    									1428331
-    								</td>
-    								<td>
-    									02/08/2012
-    								</td>
-    								<td>
-    									Entregado
-    								</td>
-    							</tr>
-    							<tr class="table-warning">
-    								<td>
-    									2
-    								</td>
-    								<td>
-    									1428741
-    								</td>
-    								<td>
-    									03/04/2011
-    								</td>
-    								<td>
-    									Pago pendiente
-    								</td>
-    							</tr>
-    							<tr class="table-danger">
-    								<td>
-    									1
-    								</td>
-    								<td>
-    									1428998
-    								</td>
-    								<td>
-    									04/06/2010
-    								</td>
-    								<td>
-    									Cancelado
-    								</td>
-    							</tr>
+
     						</tbody>
     					</table>
 

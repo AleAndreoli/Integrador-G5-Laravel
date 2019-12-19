@@ -52,7 +52,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Telephone', 'user_id');
     }
 
-    public function shopingCarts()
+    public function shoppingCarts()
     {
         return $this->hasMany('App\ShoppingCart', 'user_id');
     }

@@ -35,6 +35,8 @@ Route::get('/product', function () {
 
 Route::get('/product/{id}', 'ProductController@show')->name('showProduct');
 
+Route::post('/product/{id}', 'ShoppingCartController@addProduct')->name('showProduct');
+
 // Rutas de Proveedor
 
 Route::get('/provider/add', function () {
@@ -68,6 +70,8 @@ Route::get('categories/list', 'CategoryController@directory');
 Route::get('/checkout', function () {
     return view('carts.checkout');
 });
+
+
 
 Auth::routes();
 
