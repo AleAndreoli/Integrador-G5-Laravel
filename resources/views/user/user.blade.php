@@ -185,21 +185,26 @@
             </div><!--Final Pestaña Pedidos-->
 
              <div class="tab-pane" id="direcciones">
-
-               <h2></h2>
-
+             @forelse ($usuario->addresses as $address)
+               <h2></h2>                
+               
                <div class="row">
-    						<div class="col-md-6">
+    						<div class="col-md-4">
     							<div class="card bg-default">
     								<h5 class="card-header">
-    									Casa
+    									{{$address->alias}}
     								</h5>
     								<div class="card-footer">
-    									Lima 1128 7º C <br>
-                      Bº General Paz <br>
-                      Cel: (0351) 151234567 <br>
-                      CP X5000ASD <br>
-                      Córdoba, Argentina <br>
+    									{{$address->street}} {{$address->number}} {{$address->floor}} {{$address->apartment}} <br>
+                      {{$address->neighborhood}} <br>
+                      @forelse ($usuario->telephones as $tele)
+                      {{$tele->areaCode}} {{$tele->number}}
+                      @empty
+                      <p>No cargaste tu número</p>
+                      @endforelse
+                      <br>
+                      {{$address->zip_code}} <br>
+                      {{$address->city}}, {{$address->province}} <br>
                       <br>
                       <div class="dropdown">
 
@@ -207,13 +212,18 @@
                           Opciones
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                           <a class="dropdown-item" href="#">Elegir como predeterminada</a> <a class="dropdown-item" href="#">Modificar</a> <a class="dropdown-item" href="#">Eliminar</a>
+                           <a class="dropdown-item" href="#">Elegir como predeterminada</a> <a class="dropdown-item" href="/address/{{Auth::id()}}">Modificar</a> <a class="dropdown-item" href="#">Eliminar</a>
                         </div>
 
     								</div>
     							</div>
     							</div>
-    						</div>
+                </div>
+                @empty
+                <div class="col-md-6">
+                      <p>No tenés domicilios cargados hasta el momento.</p>
+                      </div>
+                    @endforelse
     						<div class="col-md-6">
     							<div class="card">
     								<h5 class="card-header">

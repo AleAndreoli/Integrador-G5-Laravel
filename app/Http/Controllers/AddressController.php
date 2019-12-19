@@ -38,4 +38,10 @@ class AddressController extends Controller
         $direccion->save();
         return $this->directory();
     }
+
+    public function deleteAddress(Request $req)
+    {
+        
+    }
+
 }

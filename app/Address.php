@@ -9,7 +9,7 @@ class Address extends Model
     // Modelo de la tabla addresses
 
     protected $fillable = [
-        'user_id','provider_id','street', 'number', 'floor', 'apartment', 'unit_tower', 'neighborhood', 'province', 'city','zip_code'
+        'user_id','provider_id','street', 'number', 'alias', 'floor', 'apartment', 'unit_tower', 'neighborhood', 'province', 'city','zip_code'
     ];
 
     public function user()

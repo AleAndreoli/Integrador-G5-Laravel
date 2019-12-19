@@ -70,6 +70,13 @@
                                               <select id="province" name="province" class="form-control custom-select bg-white border-md" placeholder="Código Postal" required>
 
                                               </select>
+                                          </div> <!-- Alias -->
+                                          <div class="input.group col-md-12 mb4">
+                                            <select name="alias">
+                                              <option value="Casa" selected>Casa</option> 
+                                              <option value="Trabajo">Trabajo</option>
+                                              <option value="Otro">Otro</option>
+                                            </select>
                                           </div>
 
                                           <!-- Botón para agregar -->
